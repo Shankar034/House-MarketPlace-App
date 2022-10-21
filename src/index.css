@@ -11,3 +11,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* nav{
+  position:relative; 
+  height:100vh;
+  background: #e2e1ef;
+} */
+
+.navbarListItems{
+  display: flex;
+  justify-content: center ;
+  align-content: center;
+  align-items: baseline;
+
+  
+}
+
+
+.navbarListItems li{
+  display: inline;
+  list-style-type: none;
+  
+}
