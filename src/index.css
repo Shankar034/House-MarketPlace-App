@@ -7,7 +7,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #f1f1f1;
   text-align: center;
-  display: inline;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
 }
 
 code {
@@ -29,20 +33,29 @@ code {
   text-align: center;
 
 }
-/* footer {
-  margin-top: 10px;
+footer {
+  margin-top: 3px;
   clear: both;
-  background-color: #a3b5f0;
-  padding: 40px;
+    position: relative;
+
+  border-radius: 10px;
+  background: #a9a6ae;
   
-} */
+  
+}
 .navbarListItem{
-  padding: 14px 16px;
+  padding: 14px 10px;
   text-decoration: none;
   font-size: 16px;
-  font-weight: bold;
+ font-weight: bold;
   color: rgb(30, 57, 57);
   list-style-type: none;
+  position: relative;
+  list-style: none;
+  width: 70px;
+  height: 70px;
+  z-index: 1;
+  
 
 }
 
@@ -56,5 +69,35 @@ input{
   
 }
 
+
+
+
+.navbarListItems{
+  display: flex;
+  width: 350px;
+}
+
+.navbarListItem{
+  position: relative;
+  list-style: none;
+  width: 70px;
+  height: 70px;
+  z-index: 1;
+  
+
+  
+}
+li:hover{
+  transform: translateY(-15px);
+}
+li p{
+ 
+  transition:0.5s;
+  opacity: 0;
+}
+li:hover p{
+  opacity: 1;
+
+}
 
 
