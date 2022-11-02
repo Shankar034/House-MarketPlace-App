@@ -5,6 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f1f1f1;
+  text-align: center;
+  display: inline;
 }
 
 code {
@@ -12,24 +15,46 @@ code {
     monospace;
 }
 
-/* nav{
-  position:relative; 
-  height:100vh;
-  background: #e2e1ef;
-} */
-
-/* .navbarListItems{
-  display: flex;
-  justify-content: center ;
-  align-content: center;
 
 
+
+.pageHeader{
+  
+  padding: 10px; 
+  margin: 20px;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  color: black; 
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+
+}
+/* footer {
+  margin-top: 10px;
+  clear: both;
+  background-color: #a3b5f0;
+  padding: 40px;
   
 } */
-
-
-.navbarListItems li{
-  display: inline;
+.navbarListItem{
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  color: rgb(30, 57, 57);
   list-style-type: none;
+
+}
+
+input{
+  width: 60%;
+  padding: 10px;
+  border: 1px solid #223163;
+  margin-top: 6px;
+  margin-bottom: 15px;
+  resize: vertical;
   
 }
+
+
+
