@@ -36,7 +36,7 @@ code {
 footer {
   margin-top: 3px;
   clear: both;
-    position: relative;
+  position: relative;
 
   border-radius: 10px;
   background: #a9a6ae;
@@ -62,10 +62,11 @@ footer {
 input{
   width: 60%;
   padding: 10px;
-  border: 1px solid #223163;
+  border: 2px solid #223163;
   margin-top: 6px;
   margin-bottom: 15px;
   resize: vertical;
+  border-radius: 10px;
   
 }
 
@@ -98,6 +99,16 @@ li p{
 li:hover p{
   opacity: 1;
 
+}
+.exploreCategoryImage{
+  width: 30%;
+  border-radius: 20px;
+  margin: 20px;
+ 
+  
+}
+.exploreCategoryName{
+ text-decoration: solid;
 }
 
 
