@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position</title>
+    <style>
+        /* *{
+            margin: 0;
+            padding: 0;
+        } */
+        li{
+            /* display: inline; */
+            /* list-style: georgian inside; */
+            list-style: square outside ;
+        }
+        header{
+            background: rgb(59, 42, 95);
+            color: aliceblue;
+            height: 90px;
+            padding: 10px;
+            margin: auto;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+        p{
+           text-align: center;
+           border: 3px solid gray;
+           padding: 0 71px 0 0;
+           
+
+        }
+        .container{
+            background: rgb(193, 117, 117);
+            height: 150vh;
+            width: 80vw;
+            margin: auto;
+            padding: auto;
+            border:3px solid rgb(99, 63, 16);
+            
+            }
+            .box1{
+                width: 10vw;
+                height: 10vh;
+                background: rgb(43, 92, 106);
+                color: aliceblue;
+                border-radius: 10px;
+                padding: 5px;
+                text-align: center;
+                position: relative;
+                
+                left: 65vw;
+                bottom: 25vh;
+                
+            }
+            .box2{
+                width: 20vw;
+                height: 20vh;
+                background: rgb(63, 43, 106);
+                color: aliceblue;
+                border-radius: 10px;
+                padding: 5px;
+                text-align: center;
+                /* position: relative; */
+                /* position: absolute; */
+                position: fixed;
+                bottom: 10vh;
+                left: 50vw;
+
+                
+                
+            }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Contact Us</li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt sapiente veniam excepturi accusamus dolores aliquid, sequi quasi reiciendis in ipsam odit laboriosam voluptatibus sed sint. Numquam esse, voluptatum culpa perferendis, corrupti porro deleniti exercitationem optio id suscipit unde. Voluptate, minus.
+        </p>
+        <div class="box1">
+            I am a box.
+        </div>
+        <div class="box2">
+            No, I am a box.
+        </div>
+
+    </div>
+
+    <ul>
+        <li>Banana</li>
+        <li>Orange</li>
+        <li>Apple</li>
+    </ul>
+    
+</body>
+</html>
