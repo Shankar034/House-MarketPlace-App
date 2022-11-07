@@ -10,23 +10,25 @@
             width: 10px;
             background: rgb(232, 13, 13);
             animation: load 3s ease-in-out  1 ;
+            height: 2px;
 
         }
         *{
             margin: 0;
             padding: 0;
         }
-        nav{
+        header{
+            display: flex;
             background: rgb(75, 35, 35);
             color: aliceblue;
-            height: 10vh;
+            height: 40vh;
         }
         ul{
             display: flex;
             list-style: none;
-            padding: 0 40px;
+            padding: 0 30px;
             float: right;
-            margin: 10px;  
+            margin: 60px;  
         }
         li{
             padding: 0 20px;
@@ -47,22 +49,44 @@
             100%{
                 width: 100vw;
             }
-            
+  
         }
+        @keyframes rotate {
+            0%{
+                transform: rotate(0deg);
+            }
+            50%{
+                transform: rotate(180deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+  
+        }
+        img{
+            height: 100px;
+            width: 100px;
+            padding: 20px;
+            animation: rotate 3s ease-in  infinite ;
+        }
+        
 
     </style>
 </head>
 <body>
     <div class="progress"></div>
-    <nav>
+    <header>
+        <img src="dragon.png" alt="" width="100px">
         <ul>
             <li>Home</li>
             <li>About</li>
             <li>Contact</li>
         </ul>
-    </nav>
+    </header>
     <div class="container">
+        <!-- <img src="dragon.png" alt="" width="100px"> -->
 
+ 
     </div>
     
 </body>
