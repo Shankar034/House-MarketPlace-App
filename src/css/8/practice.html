@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .progress{
+            width: 10px;
+            background: rgb(232, 13, 13);
+            animation: load 3s ease-in-out  1 ;
+
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        nav{
+            background: rgb(75, 35, 35);
+            color: aliceblue;
+            height: 10vh;
+        }
+        ul{
+            display: flex;
+            list-style: none;
+            padding: 0 40px;
+            float: right;
+            margin: 10px;  
+        }
+        li{
+            padding: 0 20px;
+        }
+
+        .container{
+            background: rgb(110, 138, 53);
+            height: 100vh;
+            
+        }
+        @keyframes load {
+            0%{
+                width: 0;
+            }
+            50%{
+                width:60vw;
+            }
+            100%{
+                width: 100vw;
+            }
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div class="progress"></div>
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+    <div class="container">
+
+    </div>
+    
+</body>
+</html>

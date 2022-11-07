@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformation</title>
+    <style>
+        .container{
+            background: rgb(99, 179, 158);
+            height: 800px;
+        }
+        .box{
+            border: 3px solid black;
+            display: inline-block;
+            transform: translate(130px, 50px);
+            /* transform: translate(100px, 50px) rotate(20deg) scale(0.9); */
+            /* transform: scale(0.5) translate(-100%, -100%); */
+            /* transform: skew(4deg, 6deg); */
+            transform-origin: 0;
+            /* rotate: x 40deg; */
+            
+
+        }
+        img{
+            /* height: 500px; */
+            width: 400px;
+            /* transition-property: width; */
+            /* transition-property: margin-right, color; */
+            /* transition-duration: 5s; */
+            /* transition-timing-function: cubic-bezier(0.18, 0.28, 0.75, 1.08); */
+            transition: width 2s ease-in-out, height 4s ease-in;
+
+        }
+        /* img:hover {
+            width: 300px;
+            height: 300px;
+
+        } */
+
+        
+
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <img id="myImage" src="dragon.png">
+            <button id="btn">Toggle</button>
+        </div>
+    </div>
+
+    
+</body>
+<script>
+    myImage.style.width = '100px';
+    myImage.style.height = '80px';
+    btn.addEventListener("click", ()=>{
+        if(myImage.style.width === '400px'){
+            myImage.style.height= '450px'
+            myImage.style.width = '100px'
+        }else if(myImage.style.width === '100px'){
+            myImage.style.width = '400px'
+        }
+        
+       
+    })
+</script>
+</html>

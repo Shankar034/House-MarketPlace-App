@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            background: aqua;
+            width: 400px;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            padding: 10px;
+            border-radius: 10px;
+            border: 2px solid rgb(43, 43, 108);
+            background: blue;
+            color: whitesmoke;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* animation-name: ShankarA;
+            animation-duration: 3s;
+            animation-delay: 1s;
+            animation-iteration-count: 10;
+            animation-direction: alternate-reverse; */
+
+            animation: ShankarB 3s ease-in-out 2 alternate-reverse;
+        }
+        img{
+            animation: ShankarB 3s ease-in-out 3 alternate-reverse;
+            
+        }
+
+        @keyframes ShankarA{
+            from{
+                width: 50px;
+                height: 50px;
+            }
+            to{
+                width: 300px;
+                height: 300px;
+            }
+        }
+        @keyframes ShankarB{
+            0%{
+                width: 20px;
+            }
+            50%{
+                width: 80px;
+            }
+            100%{
+                width: 100px;
+            }
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <img src="dragon.png" alt="" width="52px">
+        </div>
+
+    </div>
+    
+</body>
+</html>
