@@ -82,17 +82,24 @@
     <div id="notes" class="container my-3">
       <h1 >Welcome to magic notes</h1>
       <div class="card">
-        <div class="my-2 mx-2 card" >
+        
           <div class="card-body">
             
-            <p class="card-text">
+            <p class="card-text"> 
               Add a notes
             </p>
-            <button class="btn btn-primary">Add Notes</button>
+            <div class="form-group">
+              <textarea name="" id="addTxt" cols="30" rows="10"></textarea>
+            </div>
+            <button class="btn btn-primary" id="addBtn">Add Notes</button>
           </div>    
-        </div>
+        
+       
       </div>
-      
+      <hr>
+      <h1>Your Notes</h1>
+      <hr>
+      <div id="notes" class="row container-fluid"></div>
       
     </div>
 
