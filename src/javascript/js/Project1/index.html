@@ -59,9 +59,10 @@
               <a class="nav-link disabled">Disabled</a>
             </li>
           </ul>
-          <form class="d-flex">
+          <form class="form-inline me-2 my-lg-0">
             <input
-              class="form-control me-2"
+              class="form-control mr-sm-2 "
+              id="searchTxt"
               type="search"
               placeholder="Search"
               aria-label="Search"
@@ -75,32 +76,24 @@
       <hr />
       <h1>Your Notes</h1>
       <hr />
-
-      
     </nav>
 
     <div id="notes" class="container my-3">
-      <h1 >Welcome to magic notes</h1>
+      <h1>Welcome to magic notes</h1>
       <div class="card">
-        
-          <div class="card-body">
-            
-            <p class="card-text"> 
-              Add a notes
-            </p>
-            <div class="form-group">
-              <textarea name="" id="addTxt" cols="30" rows="10"></textarea>
-            </div>
-            <button class="btn btn-primary" id="addBtn">Add Notes</button>
-          </div>    
-        
-       
+        <div class="card-body">
+          <p class="card-text">Add a notes</p>
+          <div class="form-group">
+            <textarea name="" id="addTxt" cols="30" rows="10"></textarea>
+          </div>
+          <button class="btn btn-primary" id="addBtn">Add Notes</button>
+        </div>
       </div>
-      <hr>
+      <hr />
       <h1>Your Notes</h1>
-      <hr>
-      <div id="notes" class="row container-fluid"></div>
-      
+      <hr />
+      <div id="notes" class="row container-fluid">
+      </div>
     </div>
 
     <script
@@ -119,6 +112,7 @@
       integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
       crossorigin="anonymous"
     ></script>
-    <script src="app.js"></script>
+    
   </body>
+  <script src="app.js"></script>
 </html>
