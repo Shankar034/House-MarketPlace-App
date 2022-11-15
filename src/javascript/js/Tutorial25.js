@@ -2,7 +2,16 @@ console.log('This is tutorial 25')
 
 //Create a new element
 let divElem = document.createElement('div')
-let text = document.createTextNote('This is my element. Click to edit it')
+
+
+let val = localStorage.getItem('text')
+let text;
+if(val == NULL){
+
+    text = document.createTextNote('This is my element. Click to edit it')
+}else{
+    text = document.createTextNote(val)
+}
 divElem.appendChild(text);
 divElem.setAttribute('id', 'elem');
 divElem.setAttribute('style', 'border:2px solid black; width: 154px; margin:34px; padding:23px')
@@ -21,7 +30,16 @@ console.log(divElem, container, first)
 
 
 divElem.addEventListener('click', function(){
-    let html=`<textarea class="form-control textarea" aria-label="With textarea" id="textarea" ></textarea>`;
+    let noTextAreas = document.getElementsByClassName('textarea').length;
 
-    divElem.innerHTML= html
+    if(noTextAreas ==0){
+    let html = elem.innerHTML
+    divElem.innerHTML=`<textarea class="form-control textarea" aria-label="With textarea" id="textarea" > ${html}</textarea>`;
+}
+let textarea = document.getElementById('textarea')
+textarea.addEventListener('blur', function(){
+    elem.innerHTML = textarea.value;
+    localStorage.setItem('text', textarea.value)
 })
+})
+
