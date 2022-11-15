@@ -1,10 +1,10 @@
 console.log('This is tutorial 25')
 
-
+//Create a new element
 let divElem = document.createElement('div')
 let text = document.createTextNote('This is my element. Click to edit it')
-divElem.appendChild(text)
-divElem.setAttribute('id', 'elem')
+divElem.appendChild(text);
+divElem.setAttribute('id', 'elem');
 divElem.setAttribute('style', 'border:2px solid black; width: 154px; margin:34px; padding:23px')
 
 let container = document.querySelector('.container')
@@ -18,3 +18,10 @@ container.insertBefore(divElem, first)
 divElem.appendChild(TextMetrics)
 
 console.log(divElem, container, first)
+
+
+divElem.addEventListener('click', function(){
+    let html=`<textarea class="form-control textarea" aria-label="With textarea" id="textarea" ></textarea>`;
+
+    divElem.innerHTML= html
+})
