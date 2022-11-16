@@ -45,3 +45,27 @@ function Employee(name, salary, experience){
 Employee.prototype.slogan = function(){
     return `This company is the best. Regards, ${this.name}`;
 }
+
+let harryObj = new Employee("Harry", 34000, 45);
+console.log(harryObj.slogan())
+
+
+//Programmer
+
+function Programmer(name, salary, experience, language){
+    Employee.call(this, name, salary, experience);
+    this.language = language;
+}
+
+
+//Inherit the prototype
+
+Programmer.prototype = Object.create(Employee.prototype);
+
+//Manually set the constructor
+Programmer.prototype.constructor = Programmer;
+
+rohan = new Programmer("Rohan", 2,0, "javascript")
+console.log(rohan)
+
+
