@@ -50,5 +50,47 @@ function buttonClickHandler(){
 
 }
 
+let popBtn = document.getElementById('popBtn');
+popBtn.addEventListener('click', popHandler);
+
+function popHandler(){
+    console.log('You have clicked the pop Handler');
+
+    //Instantiate an xhr object
+    const xhr = new XMLHttpRequest();
+
+    //Open the object
+
+    xhr.open('GET', 'https://dummy.restapiexample.com/api/v1/employees', true);
+
+    xhr.onload = function(){
+        if(this.status === 200){
+
+          let obj = JSON.parse(this.responseText);
+          console.log(obj)
+          let list = document.getElementById('list');
+          str = '';
+          for (key in obj){
+            str += `<li> ${obj[key].employee_name} </li>`
+          }
+          list.innerHTML = str;
+        }
+        else{
+            console.log("some error occured")
+        }
+    }
+
+    //send the request
+
+ 
+    xhr.send();
+
+    console.log("We are done fetching emplooyes");
+
+
+
+
+}
+
 
 
