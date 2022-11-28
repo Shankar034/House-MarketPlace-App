@@ -33,22 +33,22 @@ xhr.onload = function(){
             <div class="card-header" id="heading${index}">
               <h2 class="mb-0">
                 <button
-                  class="btn btn-link btn-block text-left"
+                  class="btn btn-link btn-block text-left collapsed"
                   type="button"
                   data-toggle="collapse"
                   data-target="#collapse${index}"
                   aria-expanded="true"
                   aria-controls="collapse${index}"
                 >
-                ${element["title"]}
+                <b>Breaking News ${index + 1}</b>${element["title"]}
                 </button>
               </h2>
             </div>
 
             <div
-              id="collapseOne"
-              class="collapse show"
-              aria-labelledby="headingOne"
+              id="collapse${index}"
+              class="collapse "
+              aria-labelledby="heading${index}"
               data-parent="#newsAccordion"
             >
               <div class="card-body">
