@@ -13,45 +13,59 @@ let newsAccordion = document.getElementById("newsAccordion");
 
 //Create an ajax get request
 const xhr = new XMLHttpRequest();
-xhr.open('POST', `https://newsapi.org/v2/top-headlines?sources=${source}&apiKey= ${apiKey}`, true);
-xhr.getAllResponseHeaders('Content-type', 'application/json');
+xhr.open('GET', `https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${apiKey}`, true);
+// xhr.getAllResponseHeaders('Content-type', 'application/json');
 
 //What to do when response is ready
 xhr.onload = function(){
   if(this.status === 200){
-    console.log(this.responseText);
+    let json = JSON.parse(this.responseText);
+    let articles = json.articles;
+    console.log(articles);
+    let newsHtml = "";
+    articles.forEach(function(element, index){
+      // console.log(element, index);
+
+ 
+    // for(let news in articles){
+    //   console.log(articles[news]);
+      let news = `<div class="card">
+            <div class="card-header" id="heading${index}">
+              <h2 class="mb-0">
+                <button
+                  class="btn btn-link btn-block text-left"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapse${index}"
+                  aria-expanded="true"
+                  aria-controls="collapse${index}"
+                >
+                ${element["title"]}
+                </button>
+              </h2>
+            </div>
+
+            <div
+              id="collapseOne"
+              class="collapse show"
+              aria-labelledby="headingOne"
+              data-parent="#newsAccordion"
+            >
+              <div class="card-body">
+                ${element["content"]}.<a href="${element["url"]}" target = "_blank">Read more here</a>
+              </div>
+            </div>
+            </div>`;
+      newsHtml +=news;
+
+    });
+    newsAccordion.innerHTML = newsHtml;
   }
   else{
     console.log("Some error occured");
   }
 }
+
 xhr.send();
 
-let news = `<div class="card">
-<div class="card-header" id="headingOne">
-  <h2 class="mb-0">
-    <button
-      class="btn btn-link btn-block text-left"
-      type="button"
-      data-toggle="collapse"
-      data-target="#collapseOne"
-      aria-expanded="true"
-      aria-controls="collapseOne"
-    >
-      Collapsible Group Item #1
-    </button>
-  </h2>
-</div>
 
-<div
-  id="collapseOne"
-  class="collapse show"
-  aria-labelledby="headingOne"
-  data-parent="#accordionExample"
->
-  <div class="card-body">
-    Some placeholder content for the first accordion panel. This panel
-    is shown by default, thanks to the <code>.show</code> class.
-  </div>
-</div>
-</div>`;
