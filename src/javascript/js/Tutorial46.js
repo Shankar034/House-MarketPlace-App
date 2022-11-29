@@ -20,7 +20,7 @@ let s ="This is great code with shankar and also shankar vai ";
 
 
 
-// let result = reg.exec(s);
+let result = reg.exec(s);
 // console.log(result);
 
 // result = reg.exec(s);
@@ -28,10 +28,40 @@ let s ="This is great code with shankar and also shankar vai ";
 
 
 // result = reg.exec(s);
-// console.log(result);
+if(result){
+    console.log(result);
+    console.log(result.input);
+    console.log(result.index);
+
+
+}
+
 
 
 //2. test() - Returns true or false
 
-let result = reg.test(s);
-console.log(result)
+let result2 = reg.test(s);
+console.log(result2)
+
+
+
+//3. match It will return an array of results or null
+
+// let result3 = reg.match(s) --->This is wrong!!
+let result3 = s.match(reg)
+console.log(result3); 
+
+
+
+//4. search() returns index of first match else -1;
+
+// let result3 = reg.search(s) --->This is wrong!!
+let result4 = s.search(reg) ;
+console.log(result4); 
+
+
+
+//5. replace() Returns new replaced string with all teh replacements (if no flag is given first match will be replaced)
+
+let result5 = s.replace(reg,'Shuvam') ;
+console.log(result5); 
