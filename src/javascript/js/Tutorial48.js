@@ -3,11 +3,15 @@ console.log("This is Tutorial 48");
 //Regular Expression
 //Basic Functions
 //Metacharacter Symbols
+
+// let regex = /^h/i;
+
 // Character Sets
+// const regex = /s[k-s]ankar/;
+//can be an a, t or y
 
+let regex = /s[^h]ankar/;
 
-
-let regex = /^h/;
 const str = "Shankar Bhai";
 
 
