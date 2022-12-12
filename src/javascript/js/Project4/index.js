@@ -1,64 +1,88 @@
 console.log("This is Tutorial 50");
 
+const name = document.getElementById("name");
+const email = document.getElementById("email");
+const phone = document.getElementById("phone");
+let validEmail = false;
+let validPhone = false;
+let validUser = false;
 
-const name = document.getElementById('name');
-const email = document.getElementById('email');
-const phone = document.getElementById('phone');
+name.addEventListener("blur", () => {
+  console.log("Name is blurred");
 
+  //Validate name here
 
-name.addEventListener('blur',()=>{
-    console.log("Name is blurred");
+  let regex = /^[a-zA-Z]([0-9a-zA-Z]){3,10}$/;
+  let str = name.value;
+  console.log(regex, str);
 
-    //Validate name here
+  if (regex.test(str)) {
+    console.log("Your name is valid");
+    name.classList.remove("is-invalid");
+    validUser = true;
 
-    let regex = /^[a-zA-Z]([0-9a-zA-Z]){3,10}$/;
-    let str = name.value;
-    console.log(regex, str);
+  } else {
+    console.log("Your name is not valid");
+    name.classList.add("is-invalid");
+  }
+});
 
-    if(regex.test(str)){
-        console.log("Your name is valid");
-        name.classList.remove('is-invalid');
+email.addEventListener("blur", () => {
+  console.log("email is blurred");
 
-    }else{
-        console.log('Your name is not valid');
-        name.classList.add('is-invalid');
-    }
-} )
+  //Validate email here
 
-email.addEventListener('blur',()=>{
-    console.log("email is blurred");
+  let regex = /^([_\-\.0-9a-zA-Z]+)@([_\-\.0-9a-zA-Z]+)\.[a-zA-Z]{2,14}$/;
+  let str = email.value;
+  console.log(regex, str);
 
-    //Validate email here
+  if (regex.test(str)) {
+    console.log("Your email is valid");
+    email.classList.remove("is-invalid");
+    validEmail = true;
 
-    let regex = /^([_\-\.0-9a-zA-Z]+)@([_\-\.0-9a-zA-Z]+)\.(a-zA-Z){2,14}$/;
-    let str = email.value;
-    console.log(regex, str);
+  } else {
+    console.log("Your email is not valid");
+    email.classList.add("is-invalid");
+  }
+});
 
-    if(regex.test(str)){
-        console.log("Your email is valid");
-        email.classList.remove('is-invalid');
+phone.addEventListener("blur", () => {
+  console.log("Phone is blurred");
 
-    }else{
-        console.log('Your email is not valid');
-        email.classList.add('is-invalid');
-    }
-} )
+  //Validate phone here
 
-phone.addEventListener('blur',()=>{
-    console.log("Phone is blurred");
+  let regex = /^[0-9]{10}$/;
+  let str = phone.value;
+  console.log(regex, str);
 
-    //Validate phone here
+  if (regex.test(str)) {
+    console.log("Your phone is valid");
+    phone.classList.remove("is-invalid");
+    validPhone = true;
 
-    let regex = /^[0-9]{10}$/;
-    let str = phone.value;
-    console.log(regex, str);
+  } else {
+    console.log("Your phone is not valid");
+    phone.classList.add("is-invalid");
+  }
+});
 
-    if(regex.test(str)){
-        console.log("Your phone is valid");
-        phone.classList.remove('is-invalid');
+let submit = document.getElementById("submit");
+submit.addEventListener("click", (e) => {
+    e.preventDefault();
+  console.log("You clicked on submit");
 
-    }else{
-        console.log('Your phone is not valid');
-        phone.classList.add('is-invalid');
-    }
-} )
+  if(validEmail && validPhone && validUser){
+      console.log("Phone, email and user are valid. Submitting the form");
+      //Submit your form here
+      let success = document.getElementById("success");
+      success.classList.add("show");
+  }
+  else{
+    console.log("One of Phone, email or User is not valid than resubmit with valid information ");
+    let failure = document.getElementById("failure");
+      failure.classList.add("show");
+
+  }
+});
+ 
