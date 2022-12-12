@@ -6,6 +6,10 @@ const phone = document.getElementById("phone");
 let validEmail = false;
 let validPhone = false;
 let validUser = false;
+$(`#success`).hide(); 
+$(`#failure`).hide();
+
+
 
 name.addEventListener("blur", () => {
   console.log("Name is blurred");
@@ -20,10 +24,10 @@ name.addEventListener("blur", () => {
     console.log("Your name is valid");
     name.classList.remove("is-invalid");
     validUser = true;
-
   } else {
     console.log("Your name is not valid");
     name.classList.add("is-invalid");
+    validUser = false;
   }
 });
 
@@ -40,10 +44,10 @@ email.addEventListener("blur", () => {
     console.log("Your email is valid");
     email.classList.remove("is-invalid");
     validEmail = true;
-
   } else {
     console.log("Your email is not valid");
     email.classList.add("is-invalid");
+    validEmail = false;
   }
 });
 
@@ -60,29 +64,39 @@ phone.addEventListener("blur", () => {
     console.log("Your phone is valid");
     phone.classList.remove("is-invalid");
     validPhone = true;
-
   } else {
     console.log("Your phone is not valid");
     phone.classList.add("is-invalid");
+    validPhone = false;
   }
 });
 
 let submit = document.getElementById("submit");
 submit.addEventListener("click", (e) => {
-    e.preventDefault();
+  e.preventDefault();
   console.log("You clicked on submit");
+  console.log(validUser, validEmail, validPhone);
 
-  if(validEmail && validPhone && validUser){
-      console.log("Phone, email and user are valid. Submitting the form");
-      //Submit your form here
-      let success = document.getElementById("success");
-      success.classList.add("show");
-  }
-  else{
-    console.log("One of Phone, email or User is not valid than resubmit with valid information ");
+  if (validEmail && validPhone && validUser) {
+    console.log("Phone, email and user are valid. Submitting the form");
+    //Submit your form here
+    let success = document.getElementById("success");
+    success.classList.add("show");
+    // failure.classList.remove("show");
+    // $(`failure`).alert("close");
+    $(`#failure`).hide();
+    $(`#success`).show(); 
+  } else {
+    console.log(
+      "One of Phone, email or User is not valid than resubmit with valid information "
+    );
     let failure = document.getElementById("failure");
-      failure.classList.add("show");
+    failure.classList.add("show");
+    // success.classList.remove("show");
+
+    // $(`success`).alert("hide");
+    $(`#success`).hide(); 
+    $(`#failure`).show();
 
   }
 });
- 
