@@ -36,3 +36,28 @@ for (let [key, value] of myMap) {
 for(let key of myMap.keys()){
     console.log('key is ', key);
 }
+
+
+
+//You can loop through a map using for each loop
+
+
+myMap.forEach((value, key)=>{
+    console.log('Key is ', key);
+    console.log('Value is', value);
+
+});
+
+
+//Converting Map to an array
+
+let myArray = Array.from(myMap);
+console.log('Map to array is', myArray);
+
+let myKeysArray = Array.from(myMap.keys());
+console.log('Map to keys array is', myKeysArray);
+
+let myValuesArray = Array.from(myMap.values());
+console.log('Map to values array is', myValuesArray);
+
+
